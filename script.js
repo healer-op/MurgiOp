@@ -2,6 +2,7 @@
 const gameOverSound = new Audio('music/over.mp3');
 const musicSound = new Audio('music/healer.mp3');
 const highSound = new Audio('music/high.wav');
+const moveSound = new Audio('music/move.mp3');
 
 const counterDOM = document.getElementById('counter');  
 const endDOM = document.getElementById('end');  
@@ -440,6 +441,7 @@ document.getElementById('left').addEventListener("click", () => move('left'));
 document.getElementById('right').addEventListener("click", () => move('right'));
 
 window.addEventListener("keydown", event => {
+  moveSound.play();
   if (event.keyCode == '38') {
     // up arrow
     move('forward');
